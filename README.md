@@ -121,5 +121,6 @@ Evaluate the model's performance using metrics like **Precision, Recall, F1-scor
 - Streamlit (for UI)
 
 ## Contact
-For any questions or clarifications, please reach out to the project owner.
+For any questions or clarifications, please reach out to shivrajroman@gmail.com
+
 
