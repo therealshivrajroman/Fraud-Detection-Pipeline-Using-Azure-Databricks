@@ -15,30 +15,10 @@ The fraud detection pipeline consists of the following components:
    - **Data Cleaning**: Handles missing values, data formatting, and outlier detection.
    - **Feature Engineering**: Extracts meaningful features (e.g., frequency of transactions, location risk) from cleaned data.
    - **ML Model Training**: Trains fraud detection models using Spark MLlib.
-   - **Fraud Predictions**: Applies models to label transactions as fraudulent or not.
+   - **Fraud Predictions**: Applies models to label transactions as fraudulent or not.(Logistic Regression & KNN)
   
 - **Azure Data Laike Storage(Processed Predictions)**: Stores the output of the prediction step (fraud scores or labels) in Parquet or CSV format for downstream analytics.
 - **Power BI Dashboards**: Connects to the processed data in ADLS and visualizes fraud metrics, trends, and dashboards for business users.
-
-### Fraud Detection Pipeline Diagram
-Below is a textual representation of the fraud detection pipeline:
-
-1. **Data Ingestion**
-   - Raw data is ingested from **Azure Blob Storage**.
-   - Data is preprocessed and transformed using **Azure Databricks** and **Spark SQL**.
-   
-2. **Processing & Storage**
-   - Data is processed using **Delta Lake** for structured storage.
-   - Metadata is stored in the **Metadata Table** for rule-based transformations.
-
-3. **Fraud Prediction**
-   - Machine learning models (**Logistic Regression & KNN**) are trained using the preprocessed data.
-   - Trained models are saved for deployment.
-
-4. **Deployment & Insights**
-   - Fraud predictions are generated based on incoming data.
-   - Reports and insights are visualized using **Power BI**.
-   - A **Streamlit UI** is used for interactive fraud detection analysis.
 
 ## Directory Structure
 ```
