@@ -7,13 +7,18 @@ The objective of this project is to build a fraud detection pipeline to identify
 <img width="1206" height="604" alt="image" src="https://github.com/user-attachments/assets/c05b6696-aed9-4174-b3a9-757aca215b74" />
 
 The fraud detection pipeline consists of the following components:
-- **Azure Blob Storage**: Stores raw transaction data (e.g., Base.csv) and processed data.
-- **Azure Databricks**: Used for data processing, rule application, and machine learning model training.
-- **Metadata Table**: A Delta table (`metadata_table`) that stores business rules for data processing.
-- **Machine Learning Models**: Logistic Regression and KNN models for fraud detection.
-- **Automation Scripts**: Python scripts for data ingestion, processing, and model deployment.
-- **Power BI Dashboards**: Provides fraud detection insights.
-- **Streamlit UI**: A web-based interface for fraud detection and dashboard visualization.
+- **Azure Data Factory(Pipeline Trigger)**: Orchestrates and schedules the pipeline. Triggers jobs (like Databricks notebooks) to automate data processing and model execution.
+- **Azure Data Lake Storage(Raw Transaction Data)**: Stores raw input data such as CSVs from banking systems or logs. Acts as the central data lake for staging.
+  
+- **Azure Databricks/Apache Spark Engine**: Executes the core data pipeline:
+   - **Read from ADLS**: Loads raw data from Azure Data Lake into Spark DataFrames.
+   - **Data Cleaning**: Handles missing values, data formatting, and outlier detection.
+   - **Feature Engineering**: Extracts meaningful features (e.g., frequency of transactions, location risk) from cleaned data.
+   - **ML Model Training**: Trains fraud detection models using Spark MLlib.
+   - **Fraud Predictions**: Applies models to label transactions as fraudulent or not.
+  
+- **Azure Data Laike Storage(Processed Predictions)**: Stores the output of the prediction step (fraud scores or labels) in Parquet or CSV format for downstream analytics.
+- **Power BI Dashboards**: Connects to the processed data in ADLS and visualizes fraud metrics, trends, and dashboards for business users.
 
 ### Fraud Detection Pipeline Diagram
 Below is a textual representation of the fraud detection pipeline:
