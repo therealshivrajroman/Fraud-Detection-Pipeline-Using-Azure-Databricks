@@ -4,6 +4,7 @@
 The objective of this project is to build a fraud detection pipeline to identify fraudulent banking transactions. The project aims to improve fraud detection accuracy, streamline processes, and provide actionable insights to help banks reduce fraudulent activities.
 
 ## Architecture
+<img width="1206" height="604" alt="image" src="https://github.com/user-attachments/assets/c05b6696-aed9-4174-b3a9-757aca215b74" />
 
 The fraud detection pipeline consists of the following components:
 - **Azure Blob Storage**: Stores raw transaction data (e.g., Base.csv) and processed data.
